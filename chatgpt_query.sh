@@ -36,12 +36,12 @@ history=$(cat "$HISTORY_FILE")
 
 new_history=$(jq --arg content "$prompt" '. + [{"role": "user", "content": $content}]' <<< "$history")
 
-json_payload=$(jq -n --arg prefix "$PREFIX" --argjson history "$new_history" '{
-	"model": "gpt-3.5-turbo",
+json_payload=$(jq -n --arg prefix "$PREFIX" --arg model "$MODEL" --argjson history "$new_history" '{
+	"model": $model,
 	"messages": ( [{"role": "system", "content": $prefix}] + $history ),
 	"max_tokens": 300
 }')
-
+#echo $json_payload
 echo "sending request..."
 
 response=$(curl -s -X POST https://api.openai.com/v1/chat/completions \
