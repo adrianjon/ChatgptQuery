@@ -7,5 +7,5 @@ echo "API_KEY" > API_KEY
 ./install.sh
 ```
 ### Usage
-- Usage: ? <chatgpt query> | clear | clear all
+- Usage: ? \<chatgpt query\> | clear | clear all
 
