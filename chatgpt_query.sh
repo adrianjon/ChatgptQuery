@@ -4,8 +4,8 @@
 # requires jq curl 
 
 API_KEY=$(cat "$(dirname "$(realpath "$0")")/API_KEY")
-#MODEL="gpt-3,5-turbo"
-MODEL="gpt-4o"
+MODEL="gpt-3.5-turbo"
+#MODEL="gpt-4o"
 SCRIPT_DIR="$(dirname "$(realpath "$0")")"
 HISTORY_FILE="$SCRIPT_DIR/chatgpt_query_history_$PPID.json"
 PREFIX="You are an expert in command-line tools and scripting. Provide brief, concise, and to-the-point answers for command-line usage without any extra text. Give short examples on how to achieve the desired outcome."
